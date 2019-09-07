@@ -13,10 +13,10 @@ void key_scan(void){
 			HAL_Delay(10); 
 			if(KEY1_IN == 0){				
 				HAL_GPIO_WritePin(GPIOB,GPIO_PIN_3,GPIO_PIN_SET);
-				nHour = DShour%16+DShour/16*10;
-				nHour ++;		
+				nHour = DShour%16+DShour/16*10;//转换成10进制
+				nHour ++;		 //+1
 				if(nHour >23 ) nHour = 0;
-				DShour = nHour%10+nHour/10*16;
+				DShour = nHour%10+nHour/10*16;  //转换成16进制
 				
 				 ds1302_write_data(0x8e,0x00);
 					ds1302_write_data(0x84,DShour);

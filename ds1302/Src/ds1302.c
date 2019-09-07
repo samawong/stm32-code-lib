@@ -114,8 +114,8 @@ void ds1302_write_data(uint8_t reg,uint8_t data){
 
 uint8_t ds1302_read_data(uint8_t reg){
 	uint8_t temp;
-		HAL_GPIO_WritePin(DS1302_GPIO,DS1302_SCLK,GPIO_PIN_RESET);
-		HAL_GPIO_WritePin(DS1302_GPIO, DS1302_RST,  GPIO_PIN_RESET);
+	HAL_GPIO_WritePin(DS1302_GPIO,DS1302_SCLK,GPIO_PIN_RESET);
+	HAL_GPIO_WritePin(DS1302_GPIO, DS1302_RST,  GPIO_PIN_RESET);
 	HAL_Delay(1);
 	HAL_GPIO_WritePin(DS1302_GPIO, DS1302_RST,  GPIO_PIN_SET);
 	HAL_Delay(1);
